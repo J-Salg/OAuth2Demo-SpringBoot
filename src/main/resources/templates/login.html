@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign In • Spring OAuth2 Demo</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop stop-color='%23256eff'/%3E%3Cstop offset='1' stop-color='%23865cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23g)'/%3E%3C/svg%3E" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .bg-animated { background: linear-gradient(120deg, rgba(37,110,255,0.25), rgba(134,92,255,0.25)); background-size: 200% 200%; animation: gradientMove 12s ease infinite; }
+        @keyframes gradientMove { 0% {background-position: 0% 50%} 50% {background-position: 100% 50%} 100% {background-position: 0% 50%} }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased relative bg-animated">
+<main class="min-h-screen grid place-items-center px-6">
+    <div class="w-full max-w-md">
+        <div class="text-center">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-400 to-blue-500 shadow-lg mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-6 h-6"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm1 15h-2v-2h2Zm0-4h-2V7h2Z"/></svg>
+            </div>
+            <h1 class="text-2xl font-semibold">Sign in</h1>
+            <p class="mt-2 text-slate-300 text-sm">Select a provider to continue</p>
+        </div>
+
+        <div class="mt-8 space-y-3">
+            <a href="/oauth2/authorization/google" class="group w-full inline-flex items-center justify-center gap-3 rounded-lg bg-white text-slate-900 px-4 py-3 font-medium shadow/50 shadow-black/20 hover:shadow-lg transition">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-5 h-5"><path fill="#ffc107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C33.64,6.053,29.084,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#ff3d00" d="M6.306,14.691l6.571,4.819C14.655,16.108,18.961,14,24,14c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C33.64,6.053,29.084,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4caf50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.191-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.563,5.048C9.568,39.556,16.227,44,24,44z"/><path fill="#1976d2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.182-3.989,5.57c0.001-0.001,0.002-0.001,0.003-0.002l6.191,5.238C37.238,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
+                Continue with Google
+            </a>
+            <a href="/oauth2/authorization/github" class="group w-full inline-flex items-center justify-center gap-3 rounded-lg bg-slate-900 hover:bg-slate-800 text-white px-4 py-3 font-medium border border-white/10 shadow/50 shadow-black/20 hover:shadow-lg transition">
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 .297a12 12 0 0 0-3.79 23.4c.6.113.82-.26.82-.577v-2.234c-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.775.418-1.305.76-1.605-2.665-.303-5.466-1.332-5.466-5.93 0-1.31.468-2.381 1.235-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.5 11.5 0 0 1 6.004 0c2.29-1.552 3.297-1.23 3.297-1.23.653 1.652.241 2.873.118 3.176.77.84 1.234 1.911 1.234 3.221 0 4.61-2.805 5.624-5.477 5.92.43.372.814 1.102.814 2.222v3.293c0 .32.218.694.826.576A12.001 12.001 0 0 0 12 .297Z"/></svg>
+                Continue with GitHub
+            </a>
+        </div>
+
+        <p class="mt-6 text-center text-xs text-slate-400">You will be redirected to the selected provider to complete the sign-in process.</p>
+    </div>
+</main>
+</body>
+</html>
